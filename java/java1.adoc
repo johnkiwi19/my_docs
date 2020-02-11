@@ -1,7 +1,0 @@
-= Main title for java
-
-This is the main title fo java
-Hopefully we will be able to have
-each part in a seporate directory.
-
-== install java
