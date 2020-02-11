@@ -1,0 +1,4 @@
+== This is about Java
+This will be an excluded
+peice of info.
+Each sentance should be on one line.
