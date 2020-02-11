@@ -1,0 +1,31 @@
+
+= This ia A Doc
+:numbered:
+
+== Checking it is installed 
+[john@localhost aaa_doc]$ yum list installed openssh*
+Installed Packages
+openssh.x86_64                                                            8.1p1-1.fc31                                                    @updates
+openssh-clients.x86_64                                                    8.1p1-1.fc31                                                    @updates
+openssh-server.x86_64   
+ 
+[source,bash]
+----
+[john@localhost aaa_doc]$
+yum list installed openssh*
+Installed Packages
+openssh.x86_64              4p1-3.fc20           @updates
+openssh-clients.x86_64      6.4p1-3.fc20         @updates
+openssh-server.x86_64 
+----
+
+Check that the ssh server is running
+
+netstat -atn  | grep 22
+lsof -i -n  | grep ssh
+systemctl status sshd
+
+
+
+== Check that it is installed 
+

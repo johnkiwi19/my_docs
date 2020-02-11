@@ -1,0 +1,19 @@
+= Network 10 mega bits per second
+:numbered:
+:toc:
+
+== convert mB/s to mb/s
+
+you devide the number by 8
+
+== networks
+
+A 10 mbs or a 
+network_10mb-s
+
+== disks
+For a modern 7200 RPM drive it ranges from about 80-160 MB/s today
+
+The SATA 3.0 and SAS buses are 6 Gbps,
+vs. a networks 1Gbps minus protocol overhead
+
