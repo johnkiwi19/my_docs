@@ -1,6 +1,7 @@
 = Network 10 mega bits per second
 :numbered:
-:toc:
+:toc: left
+
 
 == convert mB/s to mb/s
 

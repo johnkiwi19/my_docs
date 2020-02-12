@@ -1,14 +1,31 @@
 
-= This ia A Doc
+= This is A Doc
 :numbered:
 
-== Checking it is installed 
+
+include::include.adoc[]
+include::java/java1.adoc[]
+
+= Network Stuff
+
+include::network/network_10mb-s.adoc[]
+
+
+
+
+
+
+== Checking it is installed
+[source,bash]
+----
 [john@localhost aaa_doc]$ yum list installed openssh*
 Installed Packages
 openssh.x86_64                                                            8.1p1-1.fc31                                                    @updates
 openssh-clients.x86_64                                                    8.1p1-1.fc31                                                    @updates
-openssh-server.x86_64   
- 
+openssh-server.x86_64
+----
+
+
 [source,bash]
 ----
 [john@localhost aaa_doc]$
@@ -16,7 +33,7 @@ yum list installed openssh*
 Installed Packages
 openssh.x86_64              4p1-3.fc20           @updates
 openssh-clients.x86_64      6.4p1-3.fc20         @updates
-openssh-server.x86_64 
+openssh-server.x86_64
 ----
 
 Check that the ssh server is running
@@ -27,5 +44,5 @@ systemctl status sshd
 
 
 
-== Check that it is installed 
+== Check that it is installed
 
