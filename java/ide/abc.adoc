@@ -1,0 +1,4 @@
+== This is about IDE
+
+An ide is an intregrated development enviroment.
+

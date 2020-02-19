@@ -1,0 +1,13 @@
+= Mavin Project
+
+This directory contains a make file
+and an abc file.
+The abc file is basicly an index.
+
+== Mavin
+file:///home/john/aaa/aaa_doc/java/maven/maven.html
+
+== Another Mavin
+
+
+

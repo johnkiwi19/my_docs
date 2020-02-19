@@ -1,8 +1,247 @@
 = This is a Maven Document
+// :doctype: book
+// :reproducible:
+:numbered:
+//:source-highlighter: coderay
+// :source-highlighter: rouge
+// :listing-caption: Listing
+// Uncomment next line to set page size (default is A4)
+//:pdf-page-size: Letter
+
+
+== Maven coordinates
+// Maven coordinates identify uniquely a project, a dependency, or a plugin defined in POM
+A Maven cordinate is that part of a pom file that uniquely identifies that pom file.
+// Each entity is uniquely identified by the combination of a group identifier, an artifact identifier, and the version
+
+So the coordinant consists of a combination of 3 parts. 
+Those are the 
+
+* group identifier
+* the artifact identifier
+* and the version
+
+Here is the code from the pom file
+
+
+* <modelVersion>4.0.0</modelVersion>
+* <groupId>**[red]#john.org#**</groupId>
+* <artifactId>**[red]#tmp#**</artifactId>
+* <packaging>jar</packaging>
+* <version>**[red]#1.0-SNAPSHOT#**</version>
+* <name>tmp</name>
+* <url>http://maven.apache.org</url>
+
+ss
+
+* mvn archetype:generate \
+* -DgroupId=**[red]#john.org#** \
+* -DartifactId=**[red]#tmp#** \
+* -DarchetypeArtifactId=maven-archetype-quickstart \
+* -DinteractiveMode=false
+
+
+
+
+
+=== What is a maven artiface
+
+An **artifact is the jar file** that gets sent to a maven repository 
+
+
+When you build a Maven project 
+you produce an artifact. 
+
+An artifact will have a **jar** file in it. 
+It may also have a ** source jar** filein .
+
+Each artifact has a 
+
+* group ID
+* artifactId
+* version>1.0
+
+
+// Each artifact has a group ID (usually a reversed domain name, like com.example.foo), an artifact ID (just a name), and a version string. The three together uniquely identify the artifact.
+
+A project's dependencies are specified as artifacts.
+
 
 == Create a Maven Project
 
+=== set up directory
+
+// [source,bash]
+// ----
+// clear
+// cd $(HOME)/aaa/aaa_doc/java/maven/
+// export P_NAME=tmp
+// export G_ID=john.org
+// echo $P_NAME
+// echo $G_ID
+// #===# Create a Maven Project Meathord 
+// mvn archetype:generate \
+// -DgroupId=$G_ID \
+// -DartifactId=$P_NAME \
+// -DarchetypeArtifactId=maven-archetype-quickstart \
+// -DinteractiveMode=false
+// nl tmp/pom.xml
+// ----
+
+
+=== Create the Directory 
+[source,bash]
+----
+clear
+cd $(HOME)/aaa/aaa_doc/java/maven/
+export P_NAME=tmp
+export G_ID=john.org
+export G_DIR=$(sed "s/\./\\//g" <<< $G_ID)
+echo $P_NAME
+echo $G_ID
+echo $G_DIR
+
+#===# Create a Maven Project Meathord 
+mkdir -p  tmp/src/main/java/$G_DIR
+tree
+----
 
 
 
-== Create a Maven Project Meathord 2
+
+=== Add The 
+compiler Target
+[source,bash]
+----
+# remove the last line of pom file
+sed -i  '/<\/project>/d' tmp/pom.xml
+
+# add new text to pom file
+cat << EOF >> tmp/pom.xml
+
+  <properties>
+     <maven.compiler.source>1.8</maven.compiler.source>
+     <maven.compiler.target>1.8</maven.compiler.target>
+     <maven.compiler.release>11</maven.compiler.release>
+  </properties>
+</project>
+EOF
+
+----
+
+
+
+
+=== View what has been done 
+[source,bash]
+----
+tree
+.
+└── aaa_quickstart
+    ├── pom.xml
+    └── src
+        ├── main
+        │   └── java
+        │       └── john
+        │           └── org
+        │               └── App.java
+        └── test
+            └── java
+                └── john
+                    └── org
+                        └── AppTest.java
+
+10 directories, 3 files
+----
+
+
+=== Clean 
+The best packtes 
+is to  clean everything
+before we start. 
+
+[source,bash]
+----
+mvn clean
+tree
+.
+├── pom.xml 
+└── src
+    ├── main
+    │   └── java
+    │       └── john
+    │           └── org
+    │               └── App.java
+    └── test
+        └── java
+            └── john
+                └── org
+                    └── AppTest.java
+
+9 directories, 3 files
+[john@localhost tmp]$ 
+----
+
+
+
+=== Create a Package
+Here we will creat a package. 
+The Package will be in the target directory.
+An as we can see here from the tree listing it is at the bottom of the directory.
+The name of the package is the same
+as the name of the top level directory
+
+[source,bash]
+----
+mvn package
+
+tree target/
+target/
+├── classes
+│   └── john
+│       └── org
+│           └── App.class
+├── generated-sources
+│   └── annotations
+├── generated-test-sources
+│   └── test-annotations
+├── maven-archiver
+│   └── pom.properties
+├── maven-status
+│   └── maven-compiler-plugin
+│       ├── compile
+│       │   └── default-compile
+│       │       ├── createdFiles.lst
+│       │       └── inputFiles.lst
+│       └── testCompile
+│           └── default-testCompile
+│               ├── createdFiles.lst
+│               └── inputFiles.lst
+├── surefire-reports
+│   ├── john.org.AppTest.txt
+│   └── TEST-john.org.AppTest.xml
+├── test-classes
+│   └── john
+│       └── org
+│           └── AppTest.class
+└── tmp-1.0-SNAPSHOT.jar
+
+18 directories, 10 files
+----
+
+
+
+=== Run the Package
+Here we will run the package 
+that we have just created.
+
+[source,bash]
+[john@localhost tmp]$ java -cp target/tmp-1.0-SNAPSHOT.jar john.org.App 
+Hello World!
+[john@localhost tmp]$ 
+
+
+
+
+
+
