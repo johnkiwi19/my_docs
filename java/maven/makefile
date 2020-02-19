@@ -20,3 +20,12 @@ clean:
 	rm -f abc.html
 	rm -rf tmp
 	rm -f pom.xml
+
+
+help:
+	clear
+	@echo make
+	@echo make all
+	@echo make git 
+	@echo make clean 
+	@echo make help
