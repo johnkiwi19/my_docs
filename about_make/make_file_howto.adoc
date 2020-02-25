@@ -1,0 +1,43 @@
+= Make File HowTo
+:numbered:
+:toc:
+
+https://www.youtube.com/watch?time_continue=192&v=_r7i5X0rXJk&feature=emb_logo
+
+== Makefie
+
+[source,bash]
+----
+target: dependincies
+tab	command
+----
+
+* The first part is the target.
+* Then you have the dependincies
+* After that you have the command
+
+== Target
+
+You use the target to call when you run the make file.
+
+In this example you would type make target.
+This would mean that the dependincies or teh files that you
+will be using will be checked.
+Then the command would be run
+
+== Dependincies
+These are the files that you will be using.
+The system will check each file that is listed here
+The it will check the file to see if it has been changed
+If any file has changed it will run the comme=and
+
+
+
+== Command
+This is the command that you will run
+
+
+
+
+
+

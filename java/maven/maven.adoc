@@ -67,27 +67,31 @@ Each artifact has a
 A project's dependencies are specified as artifacts.
 
 
+
+
+
+
+
+
 == Create a Maven Project
+
+a
 
 === set up directory
 
-// [source,bash]
-// ----
-// clear
-// cd $(HOME)/aaa/aaa_doc/java/maven/
-// export P_NAME=tmp
-// export G_ID=john.org
-// echo $P_NAME
-// echo $G_ID
-// #===# Create a Maven Project Meathord 
-// mvn archetype:generate \
-// -DgroupId=$G_ID \
-// -DartifactId=$P_NAME \
-// -DarchetypeArtifactId=maven-archetype-quickstart \
-// -DinteractiveMode=false
-// nl tmp/pom.xml
-// ----
+a
 
+=== Set up a basic Project
+
+a
+=== Generate via maven
+[source,bash]
+----
+mvn archetype:generate -DgroupId=com.mycompany.app \
+-DartifactId=tmp \
+-DarchetypeArtifactId=maven-archetype-quickstart  \
+-DinteractiveMode=false
+----
 
 === Create the Directory 
 [source,bash]
@@ -104,15 +108,53 @@ echo $G_DIR
 #===# Create a Maven Project Meathord 
 mkdir -p  tmp/src/main/java/$G_DIR
 tree
+
+
 ----
 
 
+=== Add the main file
+
+[source,java]
+----
+clear
+cat << EOF > tmp/src/main/java/john/org/AAAMain.java
+package john.org;
+
+public class AAAMain {
+    public static void main(String[] args) {
+        System.out.println("Hi there");
+    }
+}
+EOF
+
+tree tmp
+
+----
 
 
-=== Add The 
-compiler Target
+=== Add the pom file
 [source,bash]
 ----
+clear
+cat << EOF > tmp/pom.xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>john.org</groupId>
+  <artifactId>tmp</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>tmp</name>
+
+
+
+
+</project>
+EOF
+
+
 # remove the last line of pom file
 sed -i  '/<\/project>/d' tmp/pom.xml
 
@@ -127,7 +169,30 @@ cat << EOF >> tmp/pom.xml
 </project>
 EOF
 
+nl tmp/pom.xmp
 ----
+
+
+=== compile
+
+[source,bash]
+----
+(cd tmp && mvn clean)
+
+
+(cd tmp && mvn compile)
+tree tmp
+(cd tmp && mvn package )
+java -cp tmp/target/tmp-1.0-SNAPSHOT.jar john.org.AAAMain 
+
+----
+
+
+
+
+
+
+
 
 
 
@@ -156,13 +221,20 @@ tree
 
 
 === Clean 
-The best packtes 
+The best pracktise
 is to  clean everything
 before we start. 
 
+we use the [red]#(cd tmp && mvn clean)#
+instead of the more simple mvn clean command
+becouse we are exicuting maven from outside the tmp directory.
+
+
+
+
 [source,bash]
 ----
-mvn clean
+(cd tmp && mvn clean)
 tree
 .
 ├── pom.xml 
@@ -193,7 +265,7 @@ as the name of the top level directory
 
 [source,bash]
 ----
-mvn package
+(cd tmp && mvn package)
 
 tree target/
 target/

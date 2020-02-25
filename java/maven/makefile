@@ -1,11 +1,20 @@
-all: maven
 CMD=asciidoc -b html5
 
-maven:
+
+all: cls maven abc
+
+
+cls:
 	clear
+
+maven: maven.adoc
 	$(CMD) maven.adoc
+	
+
+abc: abc.adoc
 	$(CMD) abc.adoc
-	ls -1
+
+
 
 
 git:
@@ -18,7 +27,7 @@ git:
 clean:
 	rm -f maven.html
 	rm -f abc.html
-	rm -rf tmp
+	rm -rf tmp*
 	rm -f pom.xml
 
 
