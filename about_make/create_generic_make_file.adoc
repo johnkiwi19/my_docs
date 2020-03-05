@@ -1,0 +1,94 @@
+
+== Generic Makefile
+//
+//We can copie these commands and pasete
+//them directly to the console
+//
+//[source,bash]
+//----
+//cat << EOF >  makefile
+//CMD=asciidoc -b html5
+//
+//all: abc make_file_howto
+//
+//abc:  abc.adoc
+//        clear
+//        \$(CMD) abc.adoc
+//        ls -1
+//
+//make_file_howto: make_file_howto.adoc
+//        \$(CMD) make_file_howto.adoc
+//        ls -l
+//
+//
+//
+//git:
+//        clear
+//        (cd ~/aaa/aaa_doc/ && git add .)
+//        (cd ~/aaa/aaa_doc/ && git status)
+//        (cd ~/aaa/aaa_doc/ && git lg)
+//
+//clean:
+//        rm -f *.html
+//        rm -rf tmp
+//        rm -f pom.xml
+//help:
+//    clear
+//    @echo make
+//    @echo make all
+//    @echo make git
+//    @echo make clean
+//        @echo make help
+//
+//EOF
+//# Change the spaces to tabs
+//sed -i 's/        /\t/g' makefile
+//# View The file
+//cat -e -t -v makefile
+//
+//
+//----
+
+== New version
+by john m
+[source,bash]
+----
+name='makefile'
+# get the files
+f=$(ls -1 *.adoc | sed 's/\.[a-z]*$//')
+
+# print commands
+
+printf "CMD:=asciidoc -b html5 \n\n" > $name
+printf "all : " >> $name
+
+# LOOP print all the commands
+for i in  $f
+do
+  printf "$i.html " >> $name
+done
+printf "\n\n" >> $name
+
+# LOOP Commands dd
+for i in  $f
+do
+  printf "$i.html: $i.adoc\n" >> $name
+  printf "\t\$(CMD) $i.adoc\n\n" >> $name
+done
+printf "\n\n" >> $name
+
+
+printf "clean: \n" >> $name
+printf "\trm -f *.html pom pom.xml\n" >> $name
+printf "\trm -rf tmp\nn" >> $name
+
+printf "git:\n"  >> $name
+printf "\tclear\n"  >> $name
+printf "\t(cd ~/aaa/aaa_doc/ && git add .)\n"  >> $name
+printf "\t(cd ~/aaa/aaa_doc/ && git status)\n"  >> $name
+printf "\t(cd ~/aaa/aaa_doc/ && git lg)\n\n"  >> $name
+
+
+----
+
+

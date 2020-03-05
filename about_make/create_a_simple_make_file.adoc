@@ -1,0 +1,62 @@
+== Create a Simple Makefile
+
+What is hapening here is
+we are creating a directory called tmp.
+We are also creating a make file in that directory.
+Here is a list of commands that can be used
+to create the make file
+
+[source,bash]
+----
+rm -rf tmp
+mkdir tmp/
+cat << EOF > tmp/makefile
+all:
+    clear
+    @echo "Hi there from tmp"
+EOF
+
+# Convert the spaces to tabs
+sed -i 's/    /\t/g' tmp/makefile
+
+# Run The file
+(cd tmp && make)
+
+# View The file
+cat -e -t -v tmp/makefile
+
+
+----
+
+
+=== Add Tabs
+[source,bash]
+sed -i 's/    /\t/g' tmp/makefile
+
+=== check the file for tabs
+Makefile uses tabs.
+
+When you copy a file from the web browser 
+the browser will put spaces in the make file
+instead of tabs.
+What you can do is convert the spaces to tabs with the **sed** command.
+
+
+==== view the File with cat
+[source,bash]
+cat -e -t -v tmp/makefile
+**Output**
+
+[source,bash]
+----
+[john@localhost about_make]$ cat -e -t -v tmp/makefile
+all:$
+^Iclear$
+^I@echo "Hi there from tmp"$
+[john@localhost about_make]$ 
+----
+
+
+meathords of checking wheather we are using tabs on the command line
+
+

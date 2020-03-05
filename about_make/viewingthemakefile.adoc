@@ -1,0 +1,39 @@
+== Viewing the make file
+=== output from vi
+
+
+[light blue]*all:* 
+
+[red yellow-background]*@echo "Hi there from tmp"*
+~                                       
+~
+                                       
+
+
+== Using tabs
+[source,bash]
+----
+[john@localhost tmp]$ cat -e -t -v  makefile
+^Isay_hello:$
+^Iclear$
+^I@echo "Hello World"$
+[john@localhost tmp]$
+----
+
+== How to call a make file from another 
+
+
+== directory
+
+[source,bash]
+----
+cat << EOF > tmp/makefile
+all:
+    @echo "Hi there from tmp"
+EOF
+----
+
+== Clean howto
+When you make create a clean option
+use the rm -f option. 
+If you just use rm and the file is not there 

@@ -2,159 +2,20 @@
 :numbered:
 
 
-== create a simple make file
-What is hapening here is 
-we are creating a directory called tmp.
-We are also creating a make file in that directory.
-Here is a list of commands that can be used
-to create the make file
+
+//== create a simple make file
+include::create_a_simple_make_file.adoc[]
+
+// Viewing the make file
+//include::viewingTheMakeFile.adoc[]
+
+//include::Create_Generic_Make_File.adoc[]
 
 [source,bash]
 ----
-rm -rf tmp
-mkdir tmp/
-cat << EOF > tmp/makefile
-all:
-    clear
-    @echo "Hi there from tmp"
-EOF
-
-# Convert the spaces to tabs
-sed -i 's/    /\t/g' tmp/makefile
-
-# Run The file
-(cd tmp && make)
-
-# View The file
-cat -e -t -v tmp/makefile
-
-
+for i in $(ls -1 *.adoc )
+do
+printf "$i :$i \n\\tasciidoc -h $i\n\n " >> aaaa
+done
 ----
-
-
-=== Add Tabs
-[source,bash]
-sed -i 's/    /\t/g' tmp/makefile
-
-=== check the file for tabs
-Makefile uses tabs.
-
-When you copy a file from the web browser 
-the browser will put spaces in the make file
-instead of tabs.
-What you can do is convert the spaces to tabs with the **sed** command.
-
-
-==== view the File with cat
-[source,bash]
-cat -e -t -v tmp/makefile
-**Output**
-[source,bash]
-----
-[john@localhost about_make]$ cat -e -t -v tmp/makefile
-all:$
-^Iclear$
-^I@echo "Hi there from tmp"$
-[john@localhost about_make]$ 
-----
-
-
-meathords of checking wheather we are using tabs on the command line
-
-
-
-
-
-
-
-
-
-=== output from vi
-
-
-[light blue]*all:* 
-
-[red yellow-background]*@echo "Hi there from tmp"*
-~                                       
-~
-                                       
-
-
-== Using tabs
-[source,bash]
-----
-[john@localhost tmp]$ cat -e -t -v  makefile
-^Isay_hello:$
-^Iclear$
-^I@echo "Hello World"$
-[john@localhost tmp]$
-----
-
-== How to call a make file from another 
-
-
-== directory
-
-[source,bash]
-----
-cat << EOF > tmp/makefile
-all:
-    @echo "Hi there from tmp"
-EOF
-----
-
-== Clean howto
-When you make create a clean option
-use the rm -f option. 
-If you just use rm and the file is not there 
-
-== Generic Makefile
-
-We can copie these commands and pasete 
-them directly to the console
-
-[source,bash]
-----
-cat << EOF >  makefile 
-CMD=asciidoc -b html5
-
-all: abc make_file_howto 
-
-abc:  abc.adoc
-        clear
-        \$(CMD) abc.adoc
-        ls -1
-
-make_file_howto: make_file_howto.adoc
-        \$(CMD) make_file_howto.adoc
-        ls -l
-
-
-
-git:
-        clear
-        (cd ~/aaa/aaa_doc/ && git add .)
-        (cd ~/aaa/aaa_doc/ && git status)
-        (cd ~/aaa/aaa_doc/ && git lg)
-
-clean:
-        rm -f *.html
-        rm -rf tmp
-        rm -f pom.xml
-help:
-        clear
-        @echo make
-        @echo make all
-        @echo make git 
-        @echo make clean 
-        @echo make help
-
-EOF
-# Change the spaces to tabs
-sed -i 's/        /\t/g' makefile
-# View The file
-cat -e -t -v makefile
-
-----
-
 

@@ -1,30 +1,30 @@
-CMD=asciidoc -b html5
+CMD:=asciidoc -b html5 
 
-all: abc make_file_howto
+all : abc.html create_a_simple_make_file.html create_generic_make_file.html make_file_howto.html viewingthemakefile.html 
 
-abc:  abc.adoc
-		clear
-		$(CMD) abc.adoc
-		ls -1
+abc.html: abc.adoc
+	$(CMD) abc.adoc
 
-make_file_howto: make_file_howto.adoc
-		$(CMD) make_file_howto.adoc
-		ls -l
-git:
-		clear
-		git add .
-		git status
-		git lg
+create_a_simple_make_file.html: create_a_simple_make_file.adoc
+	$(CMD) create_a_simple_make_file.adoc
 
-clean:
-		rm -f *.html
-		rm -rf tmp
-		rm -f pom.xml
-help:
-		clear
-		@echo make
-		@echo make all
-		@echo make git
-		@echo make clean
-		@echo make help
+create_generic_make_file.html: create_generic_make_file.adoc
+	$(CMD) create_generic_make_file.adoc
+
+make_file_howto.html: make_file_howto.adoc
+	$(CMD) make_file_howto.adoc
+
+viewingthemakefile.html: viewingthemakefile.adoc
+	$(CMD) viewingthemakefile.adoc
+
+
+
+clean: 
+	rm -f *.html pom pom.xml
+	rm -rf tmp
+ngit:
+	clear
+	(cd ~/aaa/aaa_doc/ && git add .)
+	(cd ~/aaa/aaa_doc/ && git status)
+	(cd ~/aaa/aaa_doc/ && git lg)
 
