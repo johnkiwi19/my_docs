@@ -80,13 +80,13 @@ printf "\n\n" >> $name
 
 printf "clean: \n" >> $name
 printf "\trm -f *.html pom pom.xml\n" >> $name
-printf "\trm -rf tmp\nn" >> $name
+printf "\trm -rf tmp\n" >> $name
 
 printf "git:\n"  >> $name
 printf "\tclear\n"  >> $name
-printf "\t(cd ~/aaa/aaa_doc/ && git add .)\n"  >> $name
-printf "\t(cd ~/aaa/aaa_doc/ && git status)\n"  >> $name
-printf "\t(cd ~/aaa/aaa_doc/ && git lg)\n\n"  >> $name
+printf "\t(cd ~/aaa/aaa1_doc/ && git add .)\n"  >> $name
+printf "\t(cd ~/aaa/aaa1_doc/ && git status)\n"  >> $name
+printf "\t(cd ~/aaa/aaa1_doc/ && git lg)\n\n"  >> $name
 
 
 ----

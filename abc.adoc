@@ -3,12 +3,12 @@
 :numbered:
 
 
-include::include.adoc[]
-include::java/java1.adoc[]
+//include::include.adoc[]
+//include::java/java1.adoc[]
 
-= Network Stuff
+== Network Stuff
 
-include::network/network_10mb-s.adoc[]
+//include::network/network_10mb-s.adoc[]
 
 
 

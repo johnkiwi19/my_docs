@@ -4,13 +4,13 @@
 
 
 //== create a simple make file
-include::create_a_simple_make_file.adoc[]
+include::create_simple_make_file.adoc[]
 
 // Viewing the make file
-//include::viewingTheMakeFile.adoc[]
+include::viewing_the_makefile.adoc[]
 
 //include::Create_Generic_Make_File.adoc[]
-
+== General bash tips
 [source,bash]
 ----
 for i in $(ls -1 *.adoc )

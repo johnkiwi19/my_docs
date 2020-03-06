@@ -1,30 +1,30 @@
 CMD:=asciidoc -b html5 
 
-all : abc.html create_a_simple_make_file.html create_generic_make_file.html make_file_howto.html viewingthemakefile.html 
+all : abc.html create_generic_make_file.html create_simple_make_file.html make_file_howto.html viewing_the_makefile.html 
 
 abc.html: abc.adoc
 	$(CMD) abc.adoc
 
-create_a_simple_make_file.html: create_a_simple_make_file.adoc
-	$(CMD) create_a_simple_make_file.adoc
-
 create_generic_make_file.html: create_generic_make_file.adoc
 	$(CMD) create_generic_make_file.adoc
+
+create_simple_make_file.html: create_simple_make_file.adoc
+	$(CMD) create_simple_make_file.adoc
 
 make_file_howto.html: make_file_howto.adoc
 	$(CMD) make_file_howto.adoc
 
-viewingthemakefile.html: viewingthemakefile.adoc
-	$(CMD) viewingthemakefile.adoc
+viewing_the_makefile.html: viewing_the_makefile.adoc
+	$(CMD) viewing_the_makefile.adoc
 
 
 
 clean: 
 	rm -f *.html pom pom.xml
 	rm -rf tmp
-ngit:
+git:
 	clear
-	(cd ~/aaa/aaa_doc/ && git add .)
-	(cd ~/aaa/aaa_doc/ && git status)
-	(cd ~/aaa/aaa_doc/ && git lg)
+	(cd ~/aaa/aaa1_doc/ && git add .)
+	(cd ~/aaa/aaa1_doc/ && git status)
+	(cd ~/aaa/aaa1_doc/ && git lg)
 
