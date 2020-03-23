@@ -1,0 +1,21 @@
+=  Docker
+:numbered:
+
+
+== one
+Docker will not run on fedora
+this menas that you need to use podman instead
+
+== podman
+a good aproch is to use an alias
+
+=== Check the verion
+[source,bash]
+[john@localhost tmp]$ docker -v
+podman version 1.8.0
+[john@localhost tmp]$
+
+=== Get info
+
+// youtubes
+include::youtubes.adoc[]

@@ -1,0 +1,15 @@
+=== Change font size
+ctrl + or minus
+
+=== Delete a Line
+ctrl D
+
+=== Duplicate Down
+Ctrl + Alt Up or Down
+
+=== Move Up or Down
+Alt Up or Down
+
+=== Split window
+drag window tab at top of screen
+to the side of the window that you want it displayed on

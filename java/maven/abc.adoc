@@ -1,13 +1,51 @@
 = Mavin Project
 
+
 This directory contains a make file
 and an abc file.
-The abc file is basicly an index.
+The abc file is basiclycript  an index.
 
 == Mavin
 file:///home/john/aaa/aaa_doc/java/maven/maven.html
 
 == Another Mavin
+
+
+include:: 
+
+== heading one 
+
+
+this is [underline]##undelined## 
+
+this is ~subs~ script and super ^script^ and we 
+
+
+JetBrains is 20 years young! 
+It's been a journey full of innovation, 
+creativity, and fun together with our friends. 
+
+Check out #JetBrainsHighlights2019 and see how far #TheDriveToDevelop has taken us! 
+
+= This is a nother heading
+
+[source,bash]
+----
+for I in 1 2 3 4 5
+do
+  statements1      #Executed for all values of ''I'', up to a disaster-condition if any.
+  statements2
+  if (condition)
+  then
+	continue   #Go to next iteration of I in the loop and skip statements3
+  fi
+  statements
+----
+  
+  
+  
+  
+
 
 
 

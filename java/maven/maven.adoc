@@ -24,21 +24,23 @@ Those are the
 Here is the code from the pom file
 
 
-* <modelVersion>4.0.0</modelVersion>
-* <groupId>**[red]#john.org#**</groupId>
-* <artifactId>**[red]#tmp#**</artifactId>
-* <packaging>jar</packaging>
-* <version>**[red]#1.0-SNAPSHOT#**</version>
-* <name>tmp</name>
-* <url>http://maven.apache.org</url>
+<modelVersion>4.0.0</modelVersion> +
+<groupId>**[red]#john.org#**</groupId> +
+<artifactId>**[red]#tmp#**</artifactId> +
+<packaging>jar</packaging> +
+<version>*[red]#1.0-SNAPSHOT#**</version> +
+<name>tmp</name> +
+<url>http://maven.apache.org</url> +
 
-ss
+this ia
 
-* mvn archetype:generate \
-* -DgroupId=**[red]#john.org#** \
-* -DartifactId=**[red]#tmp#** \
-* -DarchetypeArtifactId=maven-archetype-quickstart \
-* -DinteractiveMode=false
+mvn archetype:generate \ +
+-DgroupID=**[red]#john.org#** \ +
+-DartifactID=**[red]#tmp#** \ +
+-DarchetypeArtifactId=[red]#maven-archetype-quickstart# \ +
+
+
+
 
 
 
@@ -75,115 +77,52 @@ A project's dependencies are specified as artifacts.
 
 == Create a Maven Project
 
-a
 
-=== set up directory
+//
+//=== set up directory
+//
+//
+//
+//=== Set up a basic Project
 
-a
 
-=== Set up a basic Project
-
-a
 === Generate via maven
+Here we will create a maven project
+we do this by using an archetype
+
+All that you need to do is to copy this code
+and then paste it to the linux terminal
+
 [source,bash]
 ----
-mvn archetype:generate -DgroupId=com.mycompany.app \
+
+mvn archetype:generate \
+-DgroupId=john.org \
 -DartifactId=tmp \
--DarchetypeArtifactId=maven-archetype-quickstart  \
+-DarchetypeArtifactId=maven-archetype-quickstart \
+-DarchetypeVersion=1.4 \
 -DinteractiveMode=false
-----
 
-=== Create the Directory 
-[source,bash]
-----
-clear
-cd $(HOME)/aaa/aaa_doc/java/maven/
-export P_NAME=tmp
-export G_ID=john.org
-export G_DIR=$(sed "s/\./\\//g" <<< $G_ID)
-echo $P_NAME
-echo $G_ID
-echo $G_DIR
-
-#===# Create a Maven Project Meathord 
-mkdir -p  tmp/src/main/java/$G_DIR
-tree
 
 
 ----
 
 
-=== Add the main file
-
-[source,java]
-----
-clear
-cat << EOF > tmp/src/main/java/john/org/AAAMain.java
-package john.org;
-
-public class AAAMain {
-    public static void main(String[] args) {
-        System.out.println("Hi there");
-    }
-}
-EOF
-
-tree tmp
-
-----
 
 
-=== Add the pom file
-[source,bash]
-----
-clear
-cat << EOF > tmp/pom.xml
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  
-  <groupId>john.org</groupId>
-  <artifactId>tmp</artifactId>
-  <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <name>tmp</name>
-
-
-
-
-</project>
-EOF
-
-
-# remove the last line of pom file
-sed -i  '/<\/project>/d' tmp/pom.xml
-
-# add new text to pom file
-cat << EOF >> tmp/pom.xml
-
-  <properties>
-     <maven.compiler.source>1.8</maven.compiler.source>
-     <maven.compiler.target>1.8</maven.compiler.target>
-     <maven.compiler.release>11</maven.compiler.release>
-  </properties>
-</project>
-EOF
-
-nl tmp/pom.xmp
-----
-
-
-=== compile
+=== compile and run code
 
 [source,bash]
 ----
-(cd tmp && mvn clean)
+(cd tmp/ && mvn clean)
 
+(cd tmp/ && mvn compile)
 
-(cd tmp && mvn compile)
-tree tmp
-(cd tmp && mvn package )
-java -cp tmp/target/tmp-1.0-SNAPSHOT.jar john.org.AAAMain 
+tree tmp/
+
+(cd tmp/ && mvn package )
+
+java -cp tmp/target/tmp-1.0-SNAPSHOT.jar john.org.App
 
 ----
 
@@ -234,8 +173,8 @@ becouse we are exicuting maven from outside the tmp directory.
 
 [source,bash]
 ----
-(cd tmp && mvn clean)
-tree
+(cd tmp/my-app && mvn clean)
+tree tmp
 .
 ├── pom.xml 
 └── src

@@ -3,19 +3,23 @@
 
 
 
-//== create a simple make file
-include::create_simple_make_file.adoc[]
 
-// Viewing the make file
-include::viewing_the_makefile.adoc[]
+include::01_create_simple_make_file.adoc[]
 
-//include::Create_Generic_Make_File.adoc[]
-== General bash tips
-[source,bash]
+include::02_viewing_the_makefile.adoc[]
+
+include::general_bash_tips.adoc[]
+
+include::create_generic_make_file.adoc[]
+
+== starting
+youtube : How to Create a Simple Makefile - Introduction to Makefiles
+https://www.youtube.com/watch?time_continue=172&v=_r7i5X0rXJk&feature=emb_logo
+It works like this
+
 ----
-for i in $(ls -1 *.adoc )
-do
-printf "$i :$i \n\\tasciidoc -h $i\n\n " >> aaaa
-done
+Target : Dependincies
+(tab)  Action
 ----
 
+This whole section is called a rule.

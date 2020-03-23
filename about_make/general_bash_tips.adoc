@@ -1,0 +1,8 @@
+== General bash tips
+[source,bash]
+----
+for i in $(ls -1 *.adoc )
+do
+printf "$i :$i \n\\tasciidoc -h $i\n\n " >> aaaa
+done
+----

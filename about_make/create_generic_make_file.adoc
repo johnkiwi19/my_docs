@@ -1,56 +1,13 @@
 
 == Generic Makefile
-//
-//We can copie these commands and pasete
-//them directly to the console
-//
-//[source,bash]
-//----
-//cat << EOF >  makefile
-//CMD=asciidoc -b html5
-//
-//all: abc make_file_howto
-//
-//abc:  abc.adoc
-//        clear
-//        \$(CMD) abc.adoc
-//        ls -1
-//
-//make_file_howto: make_file_howto.adoc
-//        \$(CMD) make_file_howto.adoc
-//        ls -l
-//
-//
-//
-//git:
-//        clear
-//        (cd ~/aaa/aaa_doc/ && git add .)
-//        (cd ~/aaa/aaa_doc/ && git status)
-//        (cd ~/aaa/aaa_doc/ && git lg)
-//
-//clean:
-//        rm -f *.html
-//        rm -rf tmp
-//        rm -f pom.xml
-//help:
-//    clear
-//    @echo make
-//    @echo make all
-//    @echo make git
-//    @echo make clean
-//        @echo make help
-//
-//EOF
-//# Change the spaces to tabs
-//sed -i 's/        /\t/g' makefile
-//# View The file
-//cat -e -t -v makefile
-//
-//
-//----
+
+This is a generic make file.
+It is writen in bash and therefore you can
+copy it to the command line and it will create a makefile
+using the bash commands 
 
 == New version
-by john m
+Copyright by john Mallett
 [source,bash]
 ----
 name='makefile'
@@ -73,7 +30,7 @@ printf "\n\n" >> $name
 for i in  $f
 do
   printf "$i.html: $i.adoc\n" >> $name
-  printf "\t\$(CMD) $i.adoc\n\n" >> $name
+  printf "\t\$(CMD) $i.adoc\n" >> $name
 done
 printf "\n\n" >> $name
 
@@ -90,5 +47,6 @@ printf "\t(cd ~/aaa/aaa1_doc/ && git lg)\n\n"  >> $name
 
 
 ----
+
 
 

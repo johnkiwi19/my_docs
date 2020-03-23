@@ -1,12 +1,9 @@
 CMD:=asciidoc -b html5 
 
-all : abc.html maven.html 
+all : abc.html 
 
 abc.html: abc.adoc
 	$(CMD) abc.adoc
-
-maven.html: maven.adoc
-	$(CMD) maven.adoc
 
 
 
