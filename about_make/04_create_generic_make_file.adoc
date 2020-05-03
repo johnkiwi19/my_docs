@@ -16,29 +16,37 @@ f=$(ls -1 *.adoc | sed 's/\.[a-z]*$//')
 
 # print commands
 
-printf "CMD:=asciidoc -b html5 \n\n" > $name
-printf "all : " >> $name
+printf "CMD:=asciidoctor -b html5 \n\n" > $name
 
-# LOOP print all the commands
+
+
+printf "### Print the all command \n" >> $name
+printf "all : " >> $name
 for i in  $f
 do
   printf "$i.html " >> $name
 done
-printf "\n\n" >> $name
+printf "\n\n\n\n" >> $name
 
-# LOOP Commands dd
+
+
+printf "### LOOP Print the RULES\n" >> $name
 for i in  $f
 do
-  printf "$i.html: $i.adoc\n" >> $name
-  printf "\t\$(CMD) $i.adoc\n" >> $name
+    printf "$i.html: $i.adoc\n" >> $name
+    printf "\t\$(CMD) $i.adoc\n" >> $name
+    printf "\n\n" >> $name
 done
 printf "\n\n" >> $name
 
-
+printf "### print the CLEAN command\n" >> $name
 printf "clean: \n" >> $name
 printf "\trm -f *.html pom pom.xml\n" >> $name
 printf "\trm -rf tmp\n" >> $name
+printf "\n\n\n" >> $name
 
+
+printf"### the GIT  command\n" >> $name
 printf "git:\n"  >> $name
 printf "\tclear\n"  >> $name
 printf "\t(cd ~/aaa/aaa1_doc/ && git add .)\n"  >> $name

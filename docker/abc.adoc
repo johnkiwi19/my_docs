@@ -1,6 +1,9 @@
 =  Docker
-:numbered:
 
+:source-highlighter: pygments
+:pygments-style: emacs
+:icons: font
+:numbered:
 
 == one
 Docker will not run on fedora
@@ -8,12 +11,46 @@ this menas that you need to use podman instead
 
 == podman
 a good aproch is to use an alias
+and set that alisa in your bashrc 
+
+alias docker='podman '
+
+
 
 === Check the verion
-[source,bash]
+
+.check the version methord 1
+
+[source,bash,linenums]
+----
 [john@localhost tmp]$ docker -v
 podman version 1.8.0
 [john@localhost tmp]$
+----
+
+.check the version methord 2
+[source,bash,linenums]
+----
+[john@localhost junk]$ docker version
+Client:
+ Version:           18.09.8
+ API version:       1.39
+ Go version:        go1.13beta1
+ Git commit:        0dd43dd
+ Built:             Fri Jul 26 03:04:01 2019
+ OS/Arch:           linux/amd64
+ Experimental:      false
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+[john@localhost junk]$
+----
+
+
+
+go onto the docker web site
+https://hub.docker.com/
+
+
+
 
 === Get info
 

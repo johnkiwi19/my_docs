@@ -1,3 +1,61 @@
-== Youtubes
-==== Replacing Docker With Podman
+= Youtubes
+:source-highlighter: pygments
+:pygments-style: emacs
+:icons: font
+:numbered:
+
+== Replacing Docker With Podman  
+47 mins 
+
 https://www.youtube.com/watch?v=N0hSn5EwW8w
+
+
+== Docker Tutorial for Beginners 
+A Full DevOps Course on How to Run Applications in Containers 
+
+https://www.youtube.com/watch?v=fqMOX6JJhGo
+
+
+== Getting Started with Docker
+Java Hello World In 5 Minutes 
+
+https://www.youtube.com/watch?v=mean7OgfF44&t=200s +
+
+=== Create a simple java file
+
+[source,bash,linenums]
+----
+cat << EOF > Hello.java
+public class Hello {
+        public static void main(String[] args) {
+                System.out.println("Hi there");
+        }
+
+}
+EOF
+----
+
+
+=== Run the file
+
+.run
+
+[source,bash,linenums]
+----
+[john@localhost junk]$ 
+javac Hello.java
+java Hello
+[john@localhost junk]$ 
+----
+
+
+.output
+
+[source,bash,linenums]
+----
+[john@localhost junk]$ 
+Hi there
+[john@localhost junk]$ 
+----
+
+

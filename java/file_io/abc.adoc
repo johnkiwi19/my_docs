@@ -1,0 +1,111 @@
+= Java File IO
+// :numbered:
+// :inline:  
+// :pygments-linenums-mode:
+
+// :table:
+// :coderay-linenums-mode:
+
+
+// :source-highlighter: pygments
+// :pygments-style: emacs
+// :icons: font
+
+== File Input and Out Put
+
+// === File Writing
+// ==== Add the classes
+// First thing that we will do is to add two clases.
+// The first Class will be a File Class and
+// the second one will be a Print Stream Class.
+// So this can be see on lines 5 & 6.
+// As of yet these class have not been asigned any values.
+
+// ==== Cretare a try catch block
+// Here we create a try catck block.
+// This is to protect the file reading and writing
+
+// ==== inside the try catch
+// Inside the try catch
+// we we will be doing thre things 
+
+// * assign the file to the stream
+// * write the data to the file
+// * close the file
+
+// That is we give the file a name.
+
+// The next thing that we do is to create the Print Stream.
+// The Print Strema has to have a file that it will print to. So we asign the file to the new Printr stream
+
+[source,groovy,linenums,highlight='7-9']
+// [source,java,linenums]
+----
+public class File_Writing {
+    public File_Writing() {
+        System.out.println("Writing To A File");
+        // create the classes
+        File f = null;
+        PrintStream ps = null;
+        
+        // asign data to the class
+        // create a try catch for the scanner
+        f = new File("output.txt");
+        try {
+            ps = new PrintStream(f);
+            ps.println("Line one of output file");
+            ps.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("*** Can Not Writ to file ***");
+            e.printStackTrace();
+        }
+
+
+    }
+}
+----
+
+
+
+=== File Reading
+
+To read a file using java we need a 
+File Object and a Scanner object.
+
+We add the File Object 
+and we add the scanner object
+
+We the create a try catch block to put the code in 
+
+We Create the new scanners and File 
+inside the try catch block.
+
+
+[source,java, linenums]
+----
+public class Ex02_UsingAScanner {
+
+    public Ex02_UsingAScanner() {
+        System.out.println("This is the constructor for "
+                + this.getClass().getName());
+        
+        
+        Scanner s = null;
+        File    f = null;
+
+        f = new File("words.txt");
+        try {
+            s = new Scanner(f);
+            while (s.hasNext()) {
+                String str = s.nextLine();
+                System.out.println(str);
+            }
+            s.close();
+        } catch (FileNotFoundException ex) {
+            System.out.println("**** This is a File Not Found Exception ****");
+        }
+
+    }
+
+}
+----

@@ -1,0 +1,36 @@
+= Exceptions in Java 
+:source-highlighter: pygments
+:pygments-style: emacs
+:icons: font
+:numbered:
+
+.Reading a file from Disk in Java 
+
+[source,java,linenums,highlight='7']
+
+----
+public class junk {
+
+    public junk() {
+        System.out.println("*** " + this.getClass() + " ***");
+
+        String[] pets  = {"Cat","Dog", "Monkey"};
+        System.out.println(pets[11]);
+    }
+
+}
+----
+
+== Run the code 
+
+
+[blue]#Exception in thread# "main" java.lang.[blue]#Array Index Out Of Bounds# Exception: Index 11 out of bounds for length 3
+
+----
+	at john.org.junk.<init>(junk.java:18)
+	at john.org.AAAMain.main(AAAMain.java:25)
+----
+
+
+
+If you do this [red]#*and*# this, you should not

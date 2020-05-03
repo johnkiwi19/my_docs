@@ -1,0 +1,100 @@
+= Source highlight lines
+:source-highlighter: pygments
+:pygments-style: emacs
+:icons: font
+:numbered:
+
+== File Stuff (Reading Writing)
+
+https://www.youtube.com/watch?v=w9EqfV-Qv6U&t=272s
+
+How to do File I/O in Java
+
+
+=== File Writing
+==== Add the classes
+First thing that we will do is to add two clases.
+The first Class will be a File Class and
+the second one will be a Print Stream Class.
+So this can be see on lines 5 & 6.
+As of yet these class have not been asigned any values.
+
+==== Cretare a try catch block
+Here we create a try catck block.
+This is to protect the file reading and writing
+
+==== inside the try catch
+Inside the try catch
+we we will be doing thre things 
+
+* assign the file to the stream
+* write the data to the file
+* close the file
+
+That is we give the file a name.
+
+The next thing that we do is to create the Print Stream.
+The Print Strema has to have a file that it will print to. So we asign the file to the new Printr stream
+
+tyut
+
+.Reading a file from Disk in Java 
+
+[source,java,linenums,highlight='11-12,18-20']
+----
+public class E02_Reading_A_File_From_Disk {
+    public E02_Reading_A_File_From_Disk() {
+        System.out.println("This is the constructor for "
+                + this.getClass().getName());
+
+        // snip
+        Scanner s = null;
+        File f = null;
+
+        f = new File("words.txt");
+        try {
+            s = new Scanner(f);
+            while (s.hasNext()) {
+                System.out.println(s.nextLine());
+            }
+            s.close();
+        } catch (FileNotFoundException ex) {
+            System.out.println("**** This is a File Not Found Exception ****");
+        }
+        // snip
+    }
+}
+----
+
+
+.Writing to a file to disk in Java 
+
+[source,java,linenums,highlight='7,8,14']
+----
+public class E02_Writing_A_File_To_Disk {
+
+    public E02_Writing_A_File_To_Disk() {
+        System.out.println("Writing A File");
+
+        // snip
+        ArrayList l = new ArrayList();
+        l.add("Line One ");
+        l.add("Line two");
+        
+        File f = new File("out.txt");
+        PrintStream ps = null;
+        
+        try {
+            ps = new PrintStream(f);
+            ps.println("Hi there from a file ");
+            ps.close();
+        } catch (FileNotFoundException ex) {
+            System.out.println("*** Error Printing the File ***");
+        }
+        // snip
+        
+    }
+}
+
+
+----

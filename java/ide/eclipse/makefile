@@ -1,7 +1,7 @@
 CMD:=asciidoctor -b html5 
 
 ### Print the all command 
-all : abc.html youtubes.html 
+all : abc.html keyboard_shortcuts.html new_dynamic_web_Project.html 
 
 
 
@@ -10,8 +10,12 @@ abc.html: abc.adoc
 	$(CMD) abc.adoc
 
 
-youtubes.html: youtubes.adoc
-	$(CMD) youtubes.adoc
+keyboard_shortcuts.html: keyboard_shortcuts.adoc
+	$(CMD) keyboard_shortcuts.adoc
+
+
+new_dynamic_web_Project.html: new_dynamic_web_Project.adoc
+	$(CMD) new_dynamic_web_Project.adoc
 
 
 

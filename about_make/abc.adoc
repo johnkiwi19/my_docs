@@ -4,22 +4,12 @@
 
 
 
-include::01_create_simple_make_file.adoc[]
+//include::01_create_simple_make_file.adoc[]
+//
+//include::02_viewing_the_makefile.adoc[]
+//
+//include::03_general_bash_tips.adoc[]
+//
+//include::04_create_generic_make_file.adoc[]
 
-include::02_viewing_the_makefile.adoc[]
-
-include::general_bash_tips.adoc[]
-
-include::create_generic_make_file.adoc[]
-
-== starting
-youtube : How to Create a Simple Makefile - Introduction to Makefiles
-https://www.youtube.com/watch?time_continue=172&v=_r7i5X0rXJk&feature=emb_logo
-It works like this
-
-----
-Target : Dependincies
-(tab)  Action
-----
-
-This whole section is called a rule.
+include::05_starting out.adoc[]

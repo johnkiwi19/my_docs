@@ -1,17 +1,13 @@
-CMD:=asciidoctor -b html5 
+CMD:=asciidoc -b html5 
 
 ### Print the all command 
-all : abc.html youtubes.html 
+all : abc.html 
 
 
 
 ### LOOP Print the RULES
 abc.html: abc.adoc
 	$(CMD) abc.adoc
-
-
-youtubes.html: youtubes.adoc
-	$(CMD) youtubes.adoc
 
 
 

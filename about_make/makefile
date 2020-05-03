@@ -1,24 +1,44 @@
 CMD:=asciidoc -b html5 
 
-all : abc.html create_generic_make_file.html create_simple_make_file.html general_bash_tips.html make_file_howto.html viewing_the_makefile.html 
+### Print the all command 
+all : 01_create_simple_make_file.html 02_viewing_the_makefile.html 03_general_bash_tips.html 04_create_generic_make_file.html abc.html make_file_howto.html 
+
+
+
+### LOOP Print the RULES
+01_create_simple_make_file.html: 01_create_simple_make_file.adoc
+	$(CMD) 01_create_simple_make_file.adoc
+
+
+02_viewing_the_makefile.html: 02_viewing_the_makefile.adoc
+	$(CMD) 02_viewing_the_makefile.adoc
+
+
+03_general_bash_tips.html: 03_general_bash_tips.adoc
+	$(CMD) 03_general_bash_tips.adoc
+
+
+04_create_generic_make_file.html: 04_create_generic_make_file.adoc
+	$(CMD) 04_create_generic_make_file.adoc
+
 
 abc.html: abc.adoc
 	$(CMD) abc.adoc
-create_generic_make_file.html: create_generic_make_file.adoc
-	$(CMD) create_generic_make_file.adoc
-create_simple_make_file.html: create_simple_make_file.adoc
-	$(CMD) create_simple_make_file.adoc
-general_bash_tips.html: general_bash_tips.adoc
-	$(CMD) general_bash_tips.adoc
+
+
 make_file_howto.html: make_file_howto.adoc
 	$(CMD) make_file_howto.adoc
-viewing_the_makefile.html: viewing_the_makefile.adoc
-	$(CMD) viewing_the_makefile.adoc
 
 
+
+
+### print the CLEAN command
 clean: 
 	rm -f *.html pom pom.xml
 	rm -rf tmp
+
+
+
 git:
 	clear
 	(cd ~/aaa/aaa1_doc/ && git add .)

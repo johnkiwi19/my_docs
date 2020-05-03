@@ -1,0 +1,68 @@
+== starting
+youtube : How to Create a Simple Makefile - Introduction to Makefiles
+https://www.youtube.com/watch?time_continue=172&v=_r7i5X0rXJk&feature=emb_logo
+It works like this
+
+----
+Target : Dependincies
+(tab)  Action
+----
+=== an example
+
+----
+aaa.html: aaa.adoc
+          $(CMD) aaa.adoc
+
+----
+- The Target
+[red yellow-background]*aaa.html*
+is the file that we will be creating
+- The dependinies
+[red yellow-background]*aaa.adoc*
+are the files that we are going to use
+too create the target
+- The Action
+[red yellow-background]*$(CMD) aaa.adoc*
+is how we create the file
+
+
+This whole section is called a rule.
+
+----
+abc : aaa.adoc bbb.adoc
+    asciidoc -b html5 abc.adoc
+----
+
+== An Example
+=== create adoc files
+
+This bash for loop will crete 3 adoc files
+with a heading and and a line of text
+
+[source,bash]
+----
+mkdir tmp
+cd tmp
+
+for i in aaa bbb ccc
+do
+  printf "= This is file $i.adoc    " > $i.adoc
+  printf "\nhi there from John \n\n " > $i.adoc
+done
+
+### Create the make file
+printf "CMD:=asciidoc -b html5 \n" > makefile
+
+printf "all : aaa.html bbb.html ccc.html\n\n" >> makefile
+
+printf "aaa.html: aaa.adoc\n\t  \$(CMD) aaa.adoc\n" >> makefile
+printf "bbb.html: bbb.adoc\n\t  \$(CMD) bbb.adoc\n" >> makefile
+printf "ccc.html: ccc.adoc\n\t  \$(CMD) ccc.adoc\n" >> makefile
+
+
+printf "clean:\n" >> makefile
+printf "\trm -f *.html pom pom.xml\n" >> makefile
+printf "\trm -rf tmp\n" >> makefile
+
+
+----

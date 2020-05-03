@@ -41,12 +41,24 @@ IJ has created the default directory structure for maven
 
 
 == straight too the vid
-link:vid/03_lookAtMaven.mp4[]
 
-// == the url
+For videos to display in thw browser 
+you will need to have the format in mp3.
+ 
 
-// link:a.html[]
-
-== insert Dependinciew
-
+----
 link:vid/05_templates.mp4[]
+----
+
+----
+++++
+<iframe width="1078" height="480" src="https://www.youtube.com/embed/rPQoq7ThGAU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+++++
+----
+
+== View Mode 
+Ctrl Shift A  ==> View m
+
+Ctrl ` 4   1
+
+

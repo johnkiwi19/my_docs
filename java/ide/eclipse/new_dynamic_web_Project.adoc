@@ -1,0 +1,70 @@
+= Dynamic Web Project in eclipse 
+:source-highlighter: pygments
+:pygments-style: emacs
+:icons: font
+:numbered:
+
+
+
+== Search For in youtube 
+creating_and_deploying_a_dynamic_web_app_in_eclipse_and_tomcat
+
+
+== Create the project
+- File -> New -> Other. 
+- Type in [red yellow-background]#web# in the search
+- and chose [red yellow-background]#New Dynamic Web Project#
+- Then Press red yellow-background]#Finish#
+
+We have now creeated a new Dynamic web page 
+
+== Create a web page called index
+
+
+- Goto the project explorer tab and open your project
+- Chose the web Content tab
+- chose new HTML File 
+
+== Run the file in the browser
+
+
+== To Create a project
+
+File - New - Project +
+
+we now have the new project dialouge box.
+We Enter web in the search bar
+We now have the choice of a dynamic web page
+or a static web page 
+
+
+We are going to chose a dynaynamic Web project Dialoug
+Tab
+
+The first thing that we are going to do is to chose a name for this project and to keep things simple we will just call this project  aaa 
+
+
+We keep the default location
+
+Next thing down is the target Runtime. 
+The targetr runtime will be apachie 9 
+
+
+== Open The Java ee Perspective 
+
+
+// [source,html,linenums,highlight='11-12,18-20']
+
+.Reading a file from Disk in Java 
+
+
+[source,html,linenums]
+----
+<body>
+  <h1>This is a heading </h1>
+	<div> What is a div</div>
+
+</body>
+----
+
+

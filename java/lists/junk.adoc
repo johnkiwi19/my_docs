@@ -1,0 +1,27 @@
+= Source highlight lines
+:source-highlighter: pygments
+:pygments-style: emacs
+:icons: font
+ 
+== Creating an application
+ 
+To create a simple Ratpack application we write
+the following code:
+ 
+.Simple Groovy Ratpack application
+[source,java,linenums,highlight='7-9']
+----
+package john.org;
+
+public class Get_The_Current_Working_dir {
+    public Get_The_Current_Working_dir() {
+        System.out.println();
+                System.out.println("This is the constructor for "
+                + this.getClass().getName());
+    }
+}
+
+
+
+----
+// <1> Render output
