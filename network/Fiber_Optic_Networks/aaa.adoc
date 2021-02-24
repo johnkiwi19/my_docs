@@ -1,4 +1,5 @@
 = Network 10 mega bits per second
+
 :numbered:
 :toc: left
 
@@ -9,7 +10,7 @@ you devide the number by 8
 
 == networks
 
-A 10 mbs or a 
+A 10 mbs or a
 network_10mb-s
 
 == disks

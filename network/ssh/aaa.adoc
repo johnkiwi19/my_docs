@@ -1,0 +1,40 @@
+= SSH
+
+== ssh
+:sectnums:
+:source-highlighter: pygments
+:pygments-style: emacs
+
+=== Checking it is installed
+
+[source,bash]
+yum list installed openssh*
+
+.output
+
+[source,bash]
+openssh.x86_64              4p1-3.fc20           @updates
+openssh-clients.x86_64      6.4p1-3.fc20         @updates
+openssh-server.x86_64
+.ssh/authorized_keys
+
+=== Check that the ssh server is running
+
+netstat -atn  | grep 22
+lsof -i -n  | grep ssh
+systemctl status sshd
+● sshd.service - OpenSSH server daemon
+Loaded: loaded (/usr/lib/systemd/system/sshd.service; disabled; vendor prese
+Active: active (running) since Sun 2017-10-01 23:01:57 +1345; 2s ago
+Docs: man:sshd(8)
+man:sshd_config(5)
+Main PID: 20262 (sshd)
+Tasks: 1 (limit: 4915)
+CGroup: /system.slice/sshd.service
+└─20262 /usr/sbin/sshd -D
+
+=== Starting the sshd server
+
+systemctl start   sshd.service
+systemctl enable  sshd.service
+

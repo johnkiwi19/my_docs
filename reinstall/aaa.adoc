@@ -1,0 +1,21 @@
+= Reinstall
+:sectnums:
+
+== set up sudo
+[source,bash]
+su -
+usermod -a -G wheel john
+
+//sudo usermod -a -G wheel $(whoami)
+
+== Update DNF
+[source,bash]
+sudo dnf update -y
+
+=== Reboot
+This is not strictly necessory but can help
+
+
+
+
+

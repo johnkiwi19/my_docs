@@ -1,0 +1,69 @@
+= Virtual Machine
+:sectnums:
+
+https://fedoramagazine.org/full-virtualization-system-on-fedora-workstation-30/
+
+== Install the Packages
+[source,bash]
+----
+sudo dnf install @virtualization
+----
+
+== Setup LibVert
+sudo vi /etc/libvirt/libvirtd.conf
+
+
+=== Start Damon
+[source,bash]
+----
+sudo systemctl start libvirtd
+sudo systemctl enable libvirtd
+----
+
+
+=== Check System
+[source,bash]
+----
+lsmod | grep kvm
+----
+
+=== Update libvert file
+[source,bash]
+----
+sudo vi /etc/libvirt/libvirtd.conf
+----
+
+./etc/libvirt/libvirtd.conf
+----
+    69  unix_sock_group = "libvirt"
+
+    70  # Set the UNIX socket permissions for the R/O socket. This is used
+    71  # for monitoring VM status only
+    .
+    .
+    88  # If not using PolicyKit and setting group ownership for access
+    89  # control, then you may want to relax this too.
+    90  unix_sock_rw_perms = "0770"
+
+    91  # Set the UNIX socket permissions for the admin interface socket.
+    92  #
+    93  # Th
+----
+
+
+
+[big red]#78  unix_sock_ro_perms = "0770"#
+[big red]#90  unix_sock_rw_perms = "0770"#
+
+
+=== start and enable the libvirtd service
+[source,bash]
+----
+sudo systemctl start libvirtd
+sudo systemctl enable libvirtd
+----
+
+
+=== Add user to group
+sudo usermod -a -G libvirt $(whoami)
+
