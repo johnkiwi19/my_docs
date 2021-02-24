@@ -1,5 +1,7 @@
-== starting
-youtube : How to Create a Simple Makefile - Introduction to Makefiles
+= starting
+
+youtube : How to Create a Simple Makefile +
+- Introduction to Make + files
 https://www.youtube.com/watch?time_continue=172&v=_r7i5X0rXJk&feature=emb_logo
 It works like this
 

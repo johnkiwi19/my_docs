@@ -1,0 +1,34 @@
+= heading
+:sectnums:
+//
+//
+//== no two
+//
+//
+//=== one again
+//
+//==== four
+
+= one
+
+== two
+Whtat happens if you want to copy to a file
+
+
+include::install_intelaj.adoc[]
+
+include::install_java.adoc[]
+
+install snapd
+sudo systemctl start snapd
+
+
+Install intelaj
+down load tgz
+
+Install Java
+
+setup Bashrc
+
+
+

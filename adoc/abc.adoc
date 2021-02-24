@@ -1,0 +1,87 @@
+= Tips for AAdoc
+
+== Writing sentances
+
+this is a line of text
+
+This is a sentance + With a line
+break in it
+
+Paraph
+
+Type the word [.userinput]#asciidoc# into the search bar.
+
+This +*literal*+ will appear as *literal*.
+
+. Linux
+* Fedora
+* Ubuntu
+* Slackware
+. BSD
+* FreeBSD
+* NetBSD
+
+[source,java]
+----
+package john.org;
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hi there");
+    }
+}
+----
+
+
+.TODO list
+- Learn the AsciiDoc syntax
+- Install AsciiDoc
+- Write my document in AsciiDoc
+
+
+
+
+[source,java,linenums]
+----
+package john.org;
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hi there");
+    }
+}
+----
+
+:source-highlighter: pygments
+:pygments-style: autumn
+:pygments-linenums-mode: inline
+
+[source,java]
+----
+package john.org;
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hi there");
+    }
+}
+----
+
+
+[source,bash]
+----
+clear
+ls -l
+echo "One thwo three"
+d="a string"
+----
+
+[source,bash]
+----
+#!/bin/bash
+HELLO=Hello
+function hello {
+    local HELLO=World
+    echo $HELLO
+}
+echo $HELLO
+hello
+echo $HELLO
+---- 

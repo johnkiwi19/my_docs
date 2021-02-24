@@ -1,0 +1,36 @@
+== Install Java
+Download the latest version of java
+Use the openJDK version
+Set Up Bash RC
+
+
+https://jdk.java.net/15/
+https://jdk.java.net/15/[Download]
+
+[source,bash]
+----
+
+export PTH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin
+
+
+
+j(){
+    clear
+    java -version 2<&1 | grep \".*\"
+    echo CLASSPATH="$CLASSPATH"
+    echo PATH="     $PATH"
+}
+
+
+j15() {
+    export CLASSPATH=/home/john/.jdk/jdk-15.0.2
+    export JAVA_HOME=$CLASSPATH
+    export PATH=$JAVA_HOME/bin:$PTH
+    j
+}
+
+
+j15
+
+----
+

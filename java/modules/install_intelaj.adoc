@@ -1,0 +1,8 @@
+:sectnums:
+
+== install intelaj
+
+Download the *tar.gz*
+
+Create a directiry to install it in
+
