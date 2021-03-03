@@ -1,0 +1,48 @@
+= Set Up JavaFX in IntelaJ
+//:numbered:
+:sectnums:
+
+
+
+
+== Create a JavaFX project
+Provide a name to the project, like [red]#HelloFX#.
+
+rename the [red]#sample# package to [red]#org.openjfx#
+
+
+== Set JDK 11+ and add JavaFX 15
+Go to [big red yellow-background]#File -> Project Structure -> Project#
+
+== Add the module-info class
+[source.java]
+----
+module HelloFX {
+
+    requires javafx.controls;
+    requires javafx.fxml;
+    exports  org.openjfx;
+
+}
+----
+
+== Add the source code
+The source code will already be there
+
+== Add VM options
+--module-path ${PATH_TO_FX}:mods/production
+
+Righ te o.
+What we are going to do now
+is to add a virtual machine
+
+We chose Run --> Edit configuration
+
+
+
+example
+[source,bash]
+----
+--module-path /home/john/java/javafx-sdk-15.0.1/lib/:/home/john/java/javafx-jmods-15.0.1/
+--add-modules javafx.controls,javafx.fxml
+----
