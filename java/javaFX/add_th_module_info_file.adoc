@@ -1,0 +1,22 @@
+== Add the module-info class
+This will be added in the source directory
+
+Go to the src directory
+
+=== Create the file
+New -> moddule-info file
+
+=== Add the requiers and exports
+add the two modules from the example below
+delete the exports Directory and use the tab key to add
+the directory that you will be exporting
+[source.java]
+----
+module HelloFX {
+
+    requires javafx.controls;
+    requires javafx.fxml;
+    exports  org.openjfx;
+
+}
+----

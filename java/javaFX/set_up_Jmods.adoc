@@ -1,0 +1,16 @@
+
+=== Set Up The Jmods Dir
+//You will need the jmods directory
+//and the adk libary
+//----
+///home/john/java/javafx-jmods-15.0.1:
+///home/john/java/javafx-sdk-15.0.1/lib
+//----
+//You then combine these to form the module path command
+
+[red]#*--module-path
+/home/john/java/javafx-jmods-15.0.1:
+/home/john/java/javafx-sdk-15.0.1/lib*#
+include::Add_The_Libries.adoc[]
+//Go to [big red yellow-background]#File -> Project Structure -> Project#
+

@@ -4,84 +4,22 @@
 
 
 
-
-== Create a JavaFX project
-Provide a name to the project, like [red]#HelloFX#.
-
-rename the [red]#sample# package to [red]#org.openjfx#
-
-=== Chaneg the sample dir
-In the project window
-goto src then sample
+include::set_up_the_project.adoc[]
 
 
-Refractor then Rename
-Change the name to john.org
-
-Go to Edit configuration
-you will see that there is a red [red]#source#.Main entry
-change this to john.org
 
 
-== Set JDK 11+ and add JavaFX 15
-=== get data
-
-You will need the jmods directory
-and the adk libary
-----
-/home/john/java/javafx-jmods-15.0.1:
-/home/john/java/javafx-sdk-15.0.1/lib
-----
-You then combine these to form the module path command
-
-[red]#*--module-path
-/home/john/java/javafx-jmods-15.0.1:
-/home/john/java/javafx-sdk-15.0.1/lib*#
+include::Add_The_Libries.adoc[]
 
 
-Go to [big red yellow-background]#File -> Project Structure -> Project#
-
-
-== Add the module-info class
-This will be added in the source directory
-
-Go to the src directory
-
-=== Create the file
-New -> moddule-info file
-
-=== Add the requiers and exports
-add the two modules from the example below
-delete the exports Directory and use the tab key to add
-the directory that you will be exporting
-[source.java]
-----
-module HelloFX {
-
-    requires javafx.controls;
-    requires javafx.fxml;
-    exports  org.openjfx;
-
-}
-----
 
 == Add the source code
 The source code will already be there
 
-== Add VM options
---module-path ${PATH_TO_FX}:mods/production
-
-Righ te o.
-What we are going to do now
-is to add a virtual machine
-
-We chose Run --> Edit configuration
 
 
-
-example
-[source,bash]
 ----
 --module-path /home/john/java/javafx-sdk-15.0.1/lib/:/home/john/java/javafx-jmods-15.0.1/
 --add-modules javafx.controls,javafx.fxml
 ----
+
