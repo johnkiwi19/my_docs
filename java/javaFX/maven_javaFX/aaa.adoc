@@ -1,0 +1,51 @@
+= Maven
+
+This is straight Maven
+----
+mvn archetype:generate \
+        -DarchetypeGroupId=org.openjfx \
+        -DarchetypeArtifactId=javafx-archetype-simple \
+        -DarchetypeVersion=0.0.3 \
+        -DgroupId=org.openjfx \
+        -DartifactId=sample \
+        -Dversion=1.0.0 \
+        -Djavafx-version=15.0.1
+----
+
+
+== Fixing Maven Dependinces
+
+https://mvnrepository.com/
+
+We are at the maven repository.
+From there we need to do a search.
+This is displayed as Point [big red]#*1).*#.
+
+After we have searched for JavaFX
+we have a list of
+
+
+image::images/image-2021-03-11-20-24-51-638.png[]
+
+=== N0 2
+You will see the javaFX Controlls Repository.
+This is what we are looking for.
+Click this repository.
+We will taken to the next page.
+Where we can chose the version of the repository
+
+image::images/image-2021-03-11-20-52-26-276.png[width=800]
+
+Here we have currently done a search for javaFX.
+The search has come up with all the repositories versions for javaFX.
+
+
+
+----
+<!-- https://mvnrepository.com/artifact/org.openjfx/javafx-controls -->
+<dependency>
+    <groupId>org.openjfx</groupId>
+    <artifactId>javafx-controls</artifactId>
+    <version>15</version>
+</dependency>
+----
