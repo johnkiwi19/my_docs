@@ -7,38 +7,71 @@ mvn archetype:generate \
         -DarchetypeArtifactId=javafx-archetype-simple \
         -DarchetypeVersion=0.0.3 \
         -DgroupId=org.openjfx \
-        -DartifactId=sample \
+        -DartifactId=sample01 \
         -Dversion=1.0.0 \
         -Djavafx-version=15.0.1
 ----
 
 
+=== maven comands options
+
+----
+mvn clean
+
+mvn javafx:run
+----
+
+
 == Fixing Maven Dependinces
 
-https://mvnrepository.com/
-
-We are at the maven repository.
-From there we need to do a search.
-This is displayed as Point [big red]#*1).*#.
-
-After we have searched for JavaFX
-we have a list of
+//include::internetPart.adoc[]
 
 
-image::images/image-2021-03-11-20-24-51-638.png[]
+----
+[john@localhost junk]$ cat  sample01/pom.xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.openjfx</groupId>
+    <artifactId>sample01</artifactId>
+    <version>1.0.0</version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
 
-=== N0 2
-You will see the javaFX Controlls Repository.
-This is what we are looking for.
-Click this repository.
-We will taken to the next page.
-Where we can chose the version of the repository
+    <dependencies>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>15.0.1</version>
+        </dependency>
+    </dependencies>
 
-image::images/image-2021-03-11-20-52-26-276.png[width=800]
 
-Here we have currently done a search for javaFX.
-The search has come up with all the repositories versions for javaFX.
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <release>11</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.3</version>
+                <configuration>
+                    <mainClass>org.openjfx.App</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>[john@localhost junk]$
+----
 
 
 ----
@@ -49,3 +82,5 @@ The search has come up with all the repositories versions for javaFX.
     <version>15</version>
 </dependency>
 ----
+
+
