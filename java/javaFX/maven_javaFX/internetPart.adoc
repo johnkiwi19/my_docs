@@ -9,7 +9,9 @@ we have a list of
 
 
 image::images/a.png[]
-
+The first thing that we look at is the start point
+If we click the MVNRepository link
+we will be taken to the maven home Page 
 image::images/b.png[]
 
 image::images/c.png[]
