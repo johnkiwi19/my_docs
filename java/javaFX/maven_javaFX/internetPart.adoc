@@ -1,22 +1,42 @@
+= Internet stuff
+
 https://mvnrepository.com/
 
-We are at the maven repository.
-From there we need to do a search.
-This is displayed as Point [big red]#*1).*#.
-
-After we have searched for JavaFX
-we have a list of
-
-
+== Starting Point
 image::images/a.png[]
-The first thing that we look at is the start point
-If we click the MVNRepository link
-we will be taken to the maven home Page 
+
+
+When we do a search in google for Maven repository
+We can go straight to the start page.
+That is https://mvnrepository.com/
+
+It we wish to go back to the start page
+from any we just need to click this link
+
+=== Doing a Maven Search
+
+In our case we will be searching for Java FX
+Once we have done the search
+we will be taken to the resu;ts
+
+== Seasrch Results
 image::images/b.png[]
 
+https://mvnrepository.com/
+
+=== Do A search
+What we need to do is a search for JavaFX.
+
+== Chose a version
+image::images/d.png[]
+
+image::b.png[]
+
+
+
+== Copy the Dependency
 image::images/c.png[]
 
-image::images/d.png[]
 
 
 
