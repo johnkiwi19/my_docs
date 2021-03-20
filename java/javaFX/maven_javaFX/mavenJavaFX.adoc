@@ -1,0 +1,27 @@
+
+This is straight Maven
+----
+ARTIFACT=sample02
+#GROUP=org.openjfx
+GROUP=john.org
+WD=~/aaa/junk
+cd $WD
+mvn archetype:generate \
+        -DarchetypeGroupId=org.openjfx \
+        -DarchetypeArtifactId=javafx-archetype-simple \
+        -DarchetypeVersion=0.0.3 \
+        -DgroupId=$GROUP \
+        -DartifactId=$ARTIFACT \
+        -Dversion=1.0.0 \
+        -Djavafx-version=15.0.1 \
+        -DinteractiveMode=false
+----
+
+
+=== maven comands options
+
+----
+cd $WD/$ARTIFACT
+mvn clean javafx:run
+
+----
